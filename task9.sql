@@ -32,4 +32,4 @@ name1 like '%ф' then
 concat(name1, 'ович')
 else 'null' end) 
 as name1 from name) 
-as temp where name1 <> 'null' order by name1patronymic order by name3;
+as temp where name1 <> 'null' order by name1;
