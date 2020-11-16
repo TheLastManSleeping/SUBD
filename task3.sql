@@ -1,5 +1,9 @@
 ﻿use MyData;
 
+set foreign_key_checks = 0;
+truncate table university;
+set foreign_key_checks = 1;
+
 drop temporary table if exists temp_university;
 create temporary table temp_university (name varchar(150));
 

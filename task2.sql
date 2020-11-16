@@ -1,5 +1,11 @@
 ﻿use MyData;
 
+set foreign_key_checks = 0;
+truncate table areas;
+truncate table city;
+truncate table countries;
+set foreign_key_checks = 1;
+
 drop temporary table if exists temp_city;
 create temporary table temp_city (id mediumint, id_city mediumint, name varchar(50));
 drop temporary table if exists temp_area;

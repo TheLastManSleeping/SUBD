@@ -1,5 +1,8 @@
 ﻿use MyData;
 
-select count(case when name1 like 'Арту_' then name1 end) as n1, 
-count(case when name1 like 'Арт__' then name1 end) as n2 
-from name;    
+select '1' as 'missing letters', count(name1) from name
+where name1 like concat('%', left('Артур', char_length('Артур') - 1), '%')
+union
+
+select '2', count(name1) from name
+where name1 like concat('%', left('Артур', char_length('Артур') - 2), '%');
